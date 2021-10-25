@@ -28,10 +28,10 @@ Create a single mock sample containing a number of values, then learn to use `t.
 otter_lengths <- c(30, 45, 28, 31, 34, 46, 52, 29)
 
 # Find the confidence interval:
-t.test(otter_lengths)
+otter_ci <- t.test(otter_lengths)
 
 # Find the standard deviation
-sd(otter_lengths)
+otter_sd <- sd(otter_lengths)
 ```
 Confidence interval: We would expect, if we took multiple samples from this pop and calculated a CI for each of them, we expect 95% of those CIs could contain the true population mean. 
 
@@ -39,8 +39,12 @@ Mean otter length is 36.9 inches $\pm$ 9.3 (mean $\pm$ sd, n = 8) with a 95% con
 
 What's important to include? sample size (n), some measure of sample spread (ex: SD)
 
+objectname$valuename 
+ex: `otter_ci$conf.int`
+gives us a tool to pull pieces of information (elements) as long as you created the object and stored it
 
+### Now, using in-line referencing
 
-
+Mean otter length is `r round(otter_ci$estimate, 1)` inches.
 
 
